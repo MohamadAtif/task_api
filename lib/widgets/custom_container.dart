@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_api/models/boot_model/boot_model.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key});
+  const CustomContainer({super.key, required this.bootModel});
+  final BootModel bootModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class CustomContainer extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            const SizedBox(height: 135, width: 80, child: Text('hello')
+            SizedBox(height: 135, width: 80, child: Text(bootModel.name!)
                 //  Image.network(
                 //     'https://avatars.githubusercontent.com/u/2511009?v=4')
                 //imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail)
@@ -30,15 +32,14 @@ class CustomContainer extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .6,
-                    child: const Text('title'),
+                    child: Text(bootModel.fullName!),
                     // CustomText(text: bookModel.volumeInfo.title!)
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 200,
                     child: Text(
-                      'author',
-                      //    bookModel.volumeInfo.authors![0],
-                      style: TextStyle(fontSize: 15, color: Colors.grey),
+                      bootModel.name!,
+                      style: const TextStyle(fontSize: 15, color: Colors.grey),
                     ),
                   ),
                   const Padding(
@@ -46,7 +47,7 @@ class CustomContainer extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          'Free',
+                          'any thing',
                           style: TextStyle(
                               fontSize: 22,
                               fontFamily: 'Oswald',

@@ -21,7 +21,7 @@ class ServerFaliure extends Failure {
         return ServerFaliure('Recieve Timeout with Api Server');
 
       case DioExceptionType.badResponse:
-        return ServerFaliure.fromRespose(
+        return ServerFaliure.fromResponse(
             dioException.response!.statusCode!, dioException.response!.data);
 
       case DioExceptionType.cancel:
@@ -38,9 +38,9 @@ class ServerFaliure extends Failure {
     }
   }
 
-  factory ServerFaliure.fromRespose(int statusCode, dynamic response) {
+  factory ServerFaliure.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFaliure(response['error']['message']);
+      return ServerFaliure('errormessage');
     } else if (statusCode == 404) {
       return ServerFaliure('Your Request Not Found ... Please try Later!');
     } else if (statusCode == 500) {

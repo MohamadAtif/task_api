@@ -20,9 +20,14 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) =>
-                MostPopularCubit(HomeReboImple(ApiService(Dio())))
-                  ..fetchMostPopularRebosotries())
+          create: (context) => MostPopularCubit(
+            HomeReboImple(
+              ApiService(
+                Dio(),
+              ),
+            ),
+          )..fetchMostPopularRebosotries(),
+        )
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

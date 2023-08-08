@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:task_api/home_page.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget {
   const Splash({super.key});
+  @override
+  void initState() {}
 
+  @override
+  State<Splash> createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
