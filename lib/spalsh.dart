@@ -4,8 +4,6 @@ import 'package:task_api/home_page.dart';
 class Splash extends StatefulWidget {
   const Splash({super.key});
   @override
-  void initState() {}
-
   @override
   State<Splash> createState() => _SplashState();
 }
@@ -19,10 +17,6 @@ class _SplashState extends State<Splash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'hello this is first page',
-              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-            ),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
