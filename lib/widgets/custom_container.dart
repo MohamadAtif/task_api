@@ -17,11 +17,10 @@ class CustomContainer extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            SizedBox(height: 135, width: 80, child: Text(bootModel.name!)
-                //  Image.network(
-                //     'https://avatars.githubusercontent.com/u/2511009?v=4')
-                //imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail)
-                ),
+            SizedBox(
+                height: 135,
+                width: 80,
+                child: Image.network(bootModel.owner!.avatarUrl!)),
             const SizedBox(
               width: 10,
             ),
@@ -32,28 +31,40 @@ class CustomContainer extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .6,
-                    child: Text(bootModel.fullName!),
-                    // CustomText(text: bookModel.volumeInfo.title!)
+                    child: Text(
+                      bootModel.name!,
+                      style: const TextStyle(
+                          fontSize: 25,
+                          fontFamily: 'Oswald',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 6,
                   ),
                   SizedBox(
                     width: 200,
                     child: Text(
-                      bootModel.name!,
-                      style: const TextStyle(fontSize: 15, color: Colors.grey),
+                      bootModel.defaultBranch!,
+                      style: const TextStyle(
+                          fontSize: 23,
+                          color: Colors.grey,
+                          fontFamily: 'Oswald',
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
                         Text(
-                          'any thing',
-                          style: TextStyle(
+                          'Num Of Stars =${bootModel.stargazersCount!}',
+                          style: const TextStyle(
                               fontSize: 22,
                               fontFamily: 'Oswald',
                               color: Colors.white),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 50,
                           height: 50,
                         ),
