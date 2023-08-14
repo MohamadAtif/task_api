@@ -22,7 +22,7 @@ class _SplashState extends State<Splash> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                        builder: (context) => HomePage(),
                       ));
                 },
                 child: const Text('Go to Task'))
